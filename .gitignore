@@ -16,3 +16,6 @@
 
 # Stupid Mac files
 .DS_Store
+
+# App config files
+/config/application.yml

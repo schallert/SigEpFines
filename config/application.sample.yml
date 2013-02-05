@@ -1,0 +1,4 @@
+twilio:
+  SID: YOUR_SID
+  token: YOUR_TOKEN
+  number: YOUR_NUMBER
