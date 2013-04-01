@@ -1,0 +1,9 @@
+<div class="sixteen columns">
+  <h2>Outstanding Fines</h2>
+  <ul class="square">
+    <% @fines.each do |fine| %>
+      <li><a href="<%= show_fine_path(fine) %>"><%= fine.brother.name %> - <%= number_to_currency(fine.amount) %></a></li>
+    <% end %>
+  </ul>
+  <a href="<%= create_fine_path %>">Create New Fine</a>
+</div>

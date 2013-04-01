@@ -1,0 +1,8 @@
+<div class="sixteen columns">
+  <h2>Fine to <%= @fine.brother.name %></h2>
+  <ul>
+    <ul>Amount: <%= @fine.formatted_amount %></ul>
+    <ul>Date Assigned: <%= @fine.formatted_date %></ul>
+  </ul>
+  <%= link_to 'Delete Fine', delete_fine_path, :method => :delete %>
+</div>

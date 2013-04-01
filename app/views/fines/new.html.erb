@@ -1,0 +1,25 @@
+<div class="sixteen columns">
+  <h2>Issue New Fine</h2>
+  <%= form_for(@fine, :url => create_fine_path) do |f| %>
+    <% if @fine.errors.any? %>
+      <ul class="square">
+        <% @fine.errors.full_messages.each do |err| %>
+          <li><%= err %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <%= f.label :brother %>
+    <% @options = options_from_collection_for_select(Brother.order('name ASC'), :id, :name) %>
+    <%= f.select :brother_id, @options %>
+
+    <%= f.label :amount %>
+    <%= f.text_field :amount %>
+
+    <%= f.label :date_assigned, "Date (mm/dd/yyyy)" %>
+    <%= f.text_field :date_assigned %>
+
+    <%= f.submit %>
+  <% end %>
+  <a href="<%= root_path %>">Back</a>
+</div>
