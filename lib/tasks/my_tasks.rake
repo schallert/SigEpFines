@@ -17,3 +17,12 @@ namespace :db do
     end
   end
 end
+
+namespace :fines do
+  desc "send a reminder for each fine"
+  task :remind_all => :environment do
+    Fine.all.each do |fine|
+      fine.send_reminders
+    end
+  end
+end
