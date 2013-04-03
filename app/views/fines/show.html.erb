@@ -3,6 +3,7 @@
   <ul>
     <ul>Amount: <%= @fine.formatted_amount %></ul>
     <ul>Date Assigned: <%= @fine.formatted_date %></ul>
+    <ul>Reason: "<%= @fine.reason %>"</ul>
   </ul>
   <%= link_to 'Delete Fine', delete_fine_path, :method => :delete %>
 </div>

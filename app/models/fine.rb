@@ -1,5 +1,5 @@
 class Fine < ActiveRecord::Base
-  attr_accessible :amount, :brother_id, :date_assigned
+  attr_accessible :amount, :brother_id, :reason, :date_assigned
   belongs_to :brother
   
   validates :amount, :presence => true
