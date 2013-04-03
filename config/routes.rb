@@ -6,6 +6,7 @@ SigepFines::Application.routes.draw do
   post '/fines/new', :to => 'Fines#create', :as => :create_fine
   get '/fines/:id', :to => 'Fines#show', :as => :show_fine
   delete '/fines/:id', :to => 'Fines#destroy', :as => :delete_fine
+  get '/fines/:id/remind', :to => 'Fines#remind', :as => :remind_fine
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

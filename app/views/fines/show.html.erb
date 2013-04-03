@@ -5,5 +5,8 @@
     <ul>Date Assigned: <%= @fine.formatted_date %></ul>
     <ul>Reason: "<%= @fine.reason %>"</ul>
   </ul>
-  <%= link_to 'Delete Fine', delete_fine_path, :method => :delete %>
+  <%= link_to 'Send Reminder', remind_fine_path %> <br>
+  <%= link_to 'Delete Fine', delete_fine_path, :method => :delete %> <br><br>
+
+  <%= link_to 'Back', root_path %>
 </div>

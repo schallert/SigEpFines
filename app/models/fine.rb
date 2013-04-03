@@ -9,6 +9,10 @@ class Fine < ActiveRecord::Base
   # Kind of breaking MVC principles but fuck that
   include ActionView::Helpers::NumberHelper
 
+  TWILIO_SID = CONFIG[:twilio_SID]
+  TWILIO_TOKEN = CONFIG[:twilio_token]
+  TWILIO_NUMBER = CONFIG[:twilio_number]
+
   def formatted_date
     self.date_assigned.strftime("%m/%d/%Y").to_s
   end
@@ -32,4 +36,18 @@ class Fine < ActiveRecord::Base
   def self.format_date (date)
     date.strftime('%m/%d/%Y')
   end
+
+  def phone_reminder
+    @brother = self.brother
+
+    message = "This is a reminder that you have an oustanding fine of #{self.formatted_amount} for \"#{self.reason}\""
+
+    @client = Twilio::REST::Client.new(TWILIO_SID, TWILIO_TOKEN)
+    @client.account.sms.messages.create(
+      :from => TWILIO_NUMBER,
+      :to => @brother.phone_number,
+      :body => message
+    )
+  end
+
 end
