@@ -19,7 +19,7 @@ class FinesController < ApplicationController
     @fine.date_assigned = Fine.parse_date(date)
 
     if @fine.save
-      flash[:success] = "Fine created"
+      flash[:success] = "Fine of #{@fine.formatted_amount} to #{@fine.brother.name} created"
       redirect_to root_path
     else
       @fine.date_assigned = @fine.formatted_date
@@ -30,6 +30,7 @@ class FinesController < ApplicationController
   def destroy
     @fine = Fine.find(params[:id])
     if @fine.destroy
+      flash[:danger] = "Fine of #{@fine.formatted_amount} to #{@fine.brother.name} removed"
       redirect_to root_path
     end
   end
