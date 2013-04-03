@@ -12,7 +12,7 @@ namespace :db do
       phone_number = row[6]
       Brother.create!(
         :name => name,
-        :email => gmail_address,
+        :email => gmail_address + "@gmail.com",
         :phone_number => phone_number)
     end
   end

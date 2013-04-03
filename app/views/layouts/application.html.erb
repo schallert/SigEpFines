@@ -12,6 +12,14 @@
   <div class="ten columns">
     <h1 class="header">Sigep Fines</h1>
   </div>
+
+  <% if user_signed_in? %>
+    <div class="six columns omega header user-info">
+      Signed in as <%= current_user.email %> <br>
+      <a href="<%= destroy_user_session_path %>">Logout</a>
+    </div>
+  <% end %>
+  
   <hr />
 
   <% flash.each do |key, value| %>

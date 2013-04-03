@@ -1,4 +1,7 @@
 class FinesController < ApplicationController
+
+  before_filter :authenticate_user!
+
   def index
     @fines = Fine.order("date_assigned DESC")
   end

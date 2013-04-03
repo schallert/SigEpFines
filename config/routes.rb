@@ -1,5 +1,7 @@
 SigepFines::Application.routes.draw do
 
+  devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout' }
+
   root :to => 'Fines#index'
 
   get '/fines/new', :to => 'Fines#new', :as => :new_fine
