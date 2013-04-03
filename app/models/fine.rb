@@ -40,7 +40,7 @@ class Fine < ActiveRecord::Base
   def phone_reminder
     @brother = self.brother
 
-    message = "This is a reminder that you have an oustanding fine of #{self.formatted_amount} for \"#{self.reason}\""
+    message = "REMINDER: you have an oustanding fine of #{self.formatted_amount} for \"#{self.reason}\""
 
     @client = Twilio::REST::Client.new(TWILIO_SID, TWILIO_TOKEN)
     @client.account.sms.messages.create(
