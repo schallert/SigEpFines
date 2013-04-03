@@ -54,4 +54,9 @@ class Fine < ActiveRecord::Base
     Notifier.reminder(self).deliver
   end
 
+  def send_reminders
+    self.phone_reminder
+    self.email_reminder
+  end
+
 end
