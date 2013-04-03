@@ -41,7 +41,9 @@ class FinesController < ApplicationController
   def remind
     @fine = Fine.find(params[:id])
     @fine.phone_reminder
-    flash[:success] = "Reminder sent"
+    @fine.email_reminder
+
+    flash[:success] = "Phone and email reminders sent"
     redirect_to show_fine_path @fine
   end
 end
