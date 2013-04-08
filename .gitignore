@@ -23,3 +23,8 @@
 
 # Ignore cached rails files
 /public/assets
+
+# Random unicorn files
+/shared/log/unicorn.stderr.log
+/shared/log/unicorn.stdout.log
+/shared/pids/unicorn.pid
