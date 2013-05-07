@@ -27,14 +27,14 @@ working_directory "#{my_app_path}" # available in 0.94.0+
 
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
-listen "/tmp/.sock", :backlog => 64
+listen "/tmp/fines.sock", :backlog => 64
 listen 8080, :tcp_nopush => true
 
 # nuke workers after 30 seconds instead of 60 seconds (the default)
 timeout 30
 
 # feel free to point this anywhere accessible on the filesystem
-pid "#{my_app_path}/tmp/pids/unicorn.pid"
+pid "/tmp/unicorn.fines.pid"
 
 # By default, the Unicorn logger will write to stderr.
 # Additionally, ome applications/frameworks log to stderr or stdout,
