@@ -1,3 +1,11 @@
+# Twilio configuration
 twilio_SID: YOUR_SID
 twilio_token: YOUR_TOKEN
 twilio_number: YOUR_NUMBER
+
+# Email configuration
+smtp_user_name: SMTP_USER_NAME
+smtp_password: SMTP_PASSWORD
+smtp_domain: SMTP_DOMAIN
+smtp_address: SMTP_ADDRESS
+smtp_port: SMTP_PORT
