@@ -31,3 +31,7 @@
 
 # Sensitive config files
 /config/database.yml
+
+# NewRelic
+/config/newrelic.yml
+/config/init.conf
