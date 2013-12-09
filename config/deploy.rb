@@ -20,11 +20,11 @@ default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
 before("deploy", "deploy:check_revision")
-before('deploy:assets:precompile', 'deploy:setup_db_config')
 
 after("deploy", "deploy:cleanup") # keep only the last 5 releases
 after("deploy", "deploy:reload_nginx")
 after("deploy:setup", "deploy:setup_config")
+after("deploy:create_symlink", "deploy:setup_db_config")
 
 # NewRelic
 after('deploy', 'newrelic:notice_deployment')
