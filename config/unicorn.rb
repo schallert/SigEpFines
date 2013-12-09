@@ -12,7 +12,7 @@
 # more will usually help for _short_ waits on databases/caches.
 worker_processes 4
 
-my_app_path = "/opt/sigepfines"
+my_app_path = "/opt/sigepfines/current"
 
 # Since Unicorn is never exposed to outside clients, it does not need to
 # run on the standard HTTP port (80), there is no reason to start Unicorn
